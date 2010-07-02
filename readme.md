@@ -27,5 +27,5 @@ is not included as the root of the XPaths that are generated.
 
 Prerequisites
 -------------
-# The test project requires NUnit-2.5.5 which can be downloaded from http://www.nunit.org/index.php?p=download.
+The test project requires NUnit-2.5.5 which can be downloaded from http://www.nunit.org/index.php?p=download.
 

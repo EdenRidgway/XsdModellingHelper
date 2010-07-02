@@ -1,0 +1,5 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <StartArguments>-s="..\..\..\Sample\fpml-main-4-8.xsd" -t="XsdInfo.csv" -r:"http://www.fpml.org/2010/FpML-4-8:DataDocument" -i=validation -a=fpml-annotation:deprecated -a=fpml-annotation:deprecatedReason -a=ecore:reference</StartArguments>
+  </PropertyGroup>
+</Project>

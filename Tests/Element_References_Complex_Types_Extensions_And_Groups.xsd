@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema id="Element_References_Other_Elements"
+    targetNamespace="http://tempuri.org/Element_References_Other_Elements.xsd"
+    elementFormDefault="qualified"
+    xmlns="http://tempuri.org/Element_References_Other_Elements.xsd"
+    xmlns:mstns="http://tempuri.org/Element_References_Other_Elements.xsd"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+  <xsd:element name="equity" type="EquityAsset" substitutionGroup="underlyingAsset"/>
+  
+  <xsd:element name="underlyingAsset" type="Asset" abstract="true"/>
+  
+  <xsd:complexType name="EquityAsset">
+    <xsd:annotation>
+      <xsd:documentation xml:lang="en">An exchange traded equity asset.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="ExchangeTraded"/>
+    </xsd:complexContent>
+  </xsd:complexType>
+
+  <xsd:complexType name="ExchangeTraded" abstract="true">
+    <xsd:annotation>
+      <xsd:documentation xml:lang="en">An abstract base class for all exchange traded financial products.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="UnderlyingAsset">
+        <xsd:sequence>
+          <xsd:group ref="ExchangeIdentifier.model"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+
+  <xsd:group name="ExchangeIdentifier.model">
+    <xsd:sequence>
+      <xsd:element name="relatedExchangeId" type="xsd:string" minOccurs="0" maxOccurs="unbounded">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">A short form unique identifier for a related exchange. If the element is not present then the exchange shall be the primary exchange on which listed futures and options on the underlying are listed. The term "Exchange" is assumed to have the meaning as defined in the ISDA 2002 Equity Derivatives Definitions.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="optionsExchangeId" type="xsd:string" minOccurs="0" maxOccurs="unbounded">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">A short form unique identifier for an exchange on which the reference option contract is listed. This is to address the case where the reference exchange for the future is different than the one for the option. The options Exchange is referenced on share options when Merger Elections are selected as Options Exchange Adjustment.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:group>
+
+  <xsd:complexType name="UnderlyingAsset" abstract="true">
+    <xsd:annotation>
+      <xsd:documentation xml:lang="en">Abstract base class for all underlying assets.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="IdentifiedAsset">
+        <xsd:sequence>
+          <xsd:element name="currency" type="xsd:string" minOccurs="0"/>
+          <xsd:element name="exchangeId" type="xsd:string" minOccurs="0"/>
+          <xsd:element name="clearanceSystem" type="xsd:string" minOccurs="0"/>
+          <xsd:element name="definition" type="xsd:string" minOccurs="0"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+
+  <xsd:complexType name="IdentifiedAsset" abstract="true">
+    <xsd:annotation>
+      <xsd:documentation xml:lang="en">A generic type describing an identified asset.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="Asset">
+        <xsd:sequence>
+          <xsd:element name="instrumentId" type="xsd:string" maxOccurs="unbounded"/>
+          <xsd:element name="description" type="xsd:string" minOccurs="0"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+
+  <xsd:complexType name="Asset" abstract="true">
+    <xsd:annotation>
+      <xsd:documentation xml:lang="en">Abstract base class for all underlying assets.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:attribute name="id" type="xsd:ID"/>
+  </xsd:complexType>
+  
+</xsd:schema>

@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="Element_References_Other_Elements"
+    targetNamespace="http://tempuri.org/Element_References_Other_Elements.xsd"
+    elementFormDefault="qualified"
+    xmlns="http://tempuri.org/Element_References_Other_Elements.xsd"
+    xmlns:mstns="http://tempuri.org/Element_References_Other_Elements.xsd"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="FirstLevelChild">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="SecondLevelChild"></xs:element>
+        <xs:element ref="SecondAndThirdLevelChild"></xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SecondLevelChild">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="SecondAndThirdLevelChild"></xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SecondAndThirdLevelChild">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Property" type="xs:string"></xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Root">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="FirstLevelChild"></xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

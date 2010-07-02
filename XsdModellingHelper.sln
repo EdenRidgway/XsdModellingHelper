@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XsdHelper", "Console\XsdHelper.csproj", "{F496C367-4BBE-4933-9B65-E2C9B9D6BCBC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Sample", "Sample", "{895CFA00-2A56-4417-AD2E-831010999E06}"
+	ProjectSection(SolutionItems) = preProject
+		Sample\fpml-main-4-8.xsd = Sample\fpml-main-4-8.xsd
+		Sample\xmldsig-core-schema.xsd = Sample\xmldsig-core-schema.xsd
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XsdHelper.Tests", "Tests\XsdHelper.Tests.csproj", "{89B2CCBC-4BA7-4128-BC36-C1A4C4685636}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{5E097B2E-B1C1-402F-BDC9-5F36A37C7F9D}"
+	ProjectSection(SolutionItems) = preProject
+		Readme.md = Readme.md
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F496C367-4BBE-4933-9B65-E2C9B9D6BCBC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F496C367-4BBE-4933-9B65-E2C9B9D6BCBC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F496C367-4BBE-4933-9B65-E2C9B9D6BCBC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F496C367-4BBE-4933-9B65-E2C9B9D6BCBC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{89B2CCBC-4BA7-4128-BC36-C1A4C4685636}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{89B2CCBC-4BA7-4128-BC36-C1A4C4685636}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{89B2CCBC-4BA7-4128-BC36-C1A4C4685636}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{89B2CCBC-4BA7-4128-BC36-C1A4C4685636}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
